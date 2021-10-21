@@ -19,7 +19,7 @@ export const Navbar = () =>{
 	};
 
 	return (
-		<AppBar>
+		<AppBar position="static">
 			<Toolbar className={classes.toolbar}>
 					<Tabs 
 						value={value} 
@@ -29,23 +29,23 @@ export const Navbar = () =>{
 						
 					>
 						<Tab 
-							sx={{minWidth:{sm:"0px",xs:"0px",md:"90px"}}} 
+							sx={{minWidth:{sm:"0px",xs:"0px",md:"200px"}}} 
 							icon={<Home fontSize="large" />}
 						/>
 						<Tab 
-							sx={{minWidth:{sm:"0px",xs:"0px",md:"90px"}}} 
+							sx={{minWidth:{sm:"0px",xs:"0px",md:"200px"}}} 
 							icon={<Person fontSize="large" />}
 						/>
 						<Tab 
-							sx={{minWidth:{sm:"0px",xs:"0px",md:"90px"}}} 
+							sx={{minWidth:{sm:"0px",xs:"0px",md:"200px"}}} 
 							icon={<Settings fontSize="large" />}
 						/>
 						<Tab 
-							sx={{minWidth:{sm:"0px",xs:"0px",md:"90px"}}} 
+							sx={{minWidth:{sm:"0px",xs:"0px",md:"200px"}}} 
 							icon={<Work fontSize="large" />}
 						/>
 						<Tab 
-							sx={{minWidth:{sm:"0px",xs:"0px",md:"90px"}}} 
+							sx={{minWidth:{sm:"0px",xs:"0px",md:"200px"}}} 
 							icon={<Contacts fontSize="large" />}
 						/>
 					</Tabs>
