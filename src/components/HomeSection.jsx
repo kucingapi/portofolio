@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	logo:{
 		width:'30vw',
-		[theme.breakpoints.down('md')]:{
+		[theme.breakpoints.down('sm')]:{
 			width:'70vw'
 		}
 	},
@@ -19,10 +19,20 @@ const useStyles = makeStyles((theme) => ({
 		alignItems:'center',
 		justifyContent:'center',
 		[theme.breakpoints.down('md')]:{
-
 			alignItems:'flex-start',
 		}
-
+	},
+	itemText:{
+		order:'1',
+		[theme.breakpoints.down('sm')]:{
+			order:'2'
+		},
+	},
+	itemImage:{
+		order:'2',
+		[theme.breakpoints.down('sm')]:{
+			order:'1'
+		},
 	}
 }));
 
@@ -31,14 +41,14 @@ export const HomeSection = () =>{
 	return(
 		<Box 
 			sx={{
-				height:"83vh",
+				height:{md:"83vh",sm:"50vh"},
 				backgroundColor:"background.main",
 				padding:2,
 			}}
 			className={classes.itemMiddle}
 		>
 			<Grid container spacing={2}>
-				<Grid item xs={12} md={6} className={classes.itemMiddle}>
+				<Grid item xs={12} md={6} className={`${classes.itemMiddle} ${classes.itemText}`}>
 					<Box>
 						<Typography 
 							variant="h4" 
@@ -60,8 +70,8 @@ export const HomeSection = () =>{
 						</Typography>	
 					</Box>
 				</Grid>
-				<Grid item xs={12} md={6} className={classes.itemMiddle}>
-					<img className={classes.logo}src={Logo}/>
+				<Grid item xs={12} md={6} className={`${classes.itemMiddle} ${classes.itemImage}`}>
+					<img className={classes.logo} src={Logo}/>
 				</Grid>
 			</Grid>
 		</Box>
