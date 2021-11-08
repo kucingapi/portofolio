@@ -1,0 +1,90 @@
+import { Box, Grid, Stack, Typography } from "@mui/material"
+import { makeStyles } from "@mui/styles";
+import Logo from "../assets/My_Picture.png";
+import {ReactComponent as Arrows} from "../assets/arrows.svg";
+import { CurveDivider } from "./CurveDivider";
+
+const useStyles = makeStyles((theme) => ({
+	boldText:{
+		fontWeight:'900',
+		color: theme.palette.background.main,
+		display:'inline'
+	},
+	logo:{
+		width:'30vw',
+		[theme.breakpoints.down('sm')]:{
+			width:'70vw'
+		}
+	},
+	itemMiddle:{
+		display:'flex',
+		alignItems:'center',
+		justifyContent:'center',
+		[theme.breakpoints.down('md')]:{
+			alignItems:'flex-start',
+		}
+	},
+	itemText:{
+		order:'1',
+		[theme.breakpoints.down('sm')]:{
+			order:'2'
+		},
+	},
+	itemImage:{
+		order:'2',
+		[theme.breakpoints.down('sm')]:{
+			order:'1'
+		},
+	},
+
+}));
+
+export const Aboutmesection = () =>{
+	const classes = useStyles();
+	return(
+		<Box
+			sx={{
+				backgroundColor:"primary.main",
+			}}
+		>
+			<Typography
+				variant="h3"
+				align="center"
+				gutterBottom={true}
+				fontWeight={900}
+				sx={{
+					color:"text.secondary"
+				}}
+				>
+				Me Myself and I 
+			</Typography>
+			<Box
+				sx={{
+					height:{md:"83vh",sm:"50vh"},
+					backgroundColor:"primary.main",
+					padding:2,
+				}}
+				className={classes.itemMiddle}
+			>
+				<Grid container spacing={2}>
+					<Grid item xs={12} md={6} className={`${classes.itemMiddle} ${classes.itemText}`}>
+						<Box>
+							<Typography
+								variant="h4"
+								gutterBottom={true}>
+									I’m a student that major in Information Technnology. 
+									I really like backend and cloud computing but my frontend has more expirience. 
+									I really like programming and i’ve been learning software engineer. 
+									I can do a little bit of web design and project management but have little experience.
+							</Typography>
+						</Box>
+					</Grid>
+					<Grid item xs={12} md={6} className={`${classes.itemMiddle} ${classes.itemImage}`}>
+						<img className={classes.logo} src={Logo}/>
+					</Grid>
+				</Grid>
+			</Box>
+		</Box>
+
+	)
+}

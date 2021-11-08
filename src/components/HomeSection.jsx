@@ -6,7 +6,7 @@ import { CurveDivider } from "./CurveDivider";
 
 const useStyles = makeStyles((theme) => ({
 	boldText:{
-		fontWeight:'900',
+		fontWeight:'700',
 		color: theme.palette.primary.main,
 		display:'inline'
 	},
@@ -99,7 +99,7 @@ export const HomeSection = () =>{
 					align="center"
 					sx={{
 						color:"#1DE9B6",
-						fontWeight:"900"
+						fontWeight:"700"
 					}}
 					className={classes.arrows}
 					>
@@ -110,8 +110,6 @@ export const HomeSection = () =>{
 					className={classes.arrows}
 				/>
 			</Stack>
-			<CurveDivider/>
-			
 		</Box>
 
 	)

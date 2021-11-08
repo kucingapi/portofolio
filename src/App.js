@@ -3,6 +3,8 @@ import { responsiveFontSizes } from '@mui/material/styles';
 import { green, teal } from '@mui/material/colors';
 import { HomeSection } from './components/HomeSection';
 import { Navbar } from './components/Navbar';
+import { Aboutmesection } from './components/AboutmeSection';
+import { CurveDivider } from './components/CurveDivider';
 
 const theme = createTheme({
   typography: {
@@ -18,6 +20,9 @@ const theme = createTheme({
     background: {
       main: '#DFFFEC',
     },
+    // text: {
+    //   secondary: '#6EFFE8',
+    // },
   },
 });
 
@@ -28,6 +33,8 @@ function App() {
     <ThemeProvider theme={responsiveTheme}>
       <Navbar />
       <HomeSection />
+      <CurveDivider />
+      <Aboutmesection />
     </ThemeProvider>
   );
 }
