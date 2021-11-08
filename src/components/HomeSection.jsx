@@ -2,7 +2,7 @@ import { Box, Grid, Stack, Typography } from "@mui/material"
 import { makeStyles } from "@mui/styles";
 import Logo from "../assets/Logo.svg";
 import {ReactComponent as Arrows} from "../assets/arrows.svg";
-
+import { CurveDivider } from "./CurveDivider";
 
 const useStyles = makeStyles((theme) => ({
 	boldText:{
@@ -110,6 +110,9 @@ export const HomeSection = () =>{
 					className={classes.arrows}
 				/>
 			</Stack>
+			<CurveDivider/>
+			
 		</Box>
+
 	)
 }
