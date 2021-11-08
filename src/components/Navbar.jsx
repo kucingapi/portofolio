@@ -26,7 +26,6 @@ export const Navbar = () =>{
 						onChange={handleChange} 
 						textColor="secondary" 
 						indicatorColor="secondary"
-						
 					>
 						<Tab 
 							sx={{minWidth:{sm:"0px",xs:"0px",md:"200px"}}} 
