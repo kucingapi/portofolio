@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	arrows:{
 		animation: '3s $upDown infinite'
-	}
+	},
 
 }));
 
@@ -64,19 +64,18 @@ export const HomeSection = () =>{
 						<Box>
 							<Typography
 								variant="h4"
-								align="center"
-								gutterBottom={true}>
+								gutterBottom={true}
+								
+								>
 								Hi My name is <Box className={classes.boldText}>Novel Bafagih</Box>
 							</Typography>
 							<Typography
 								variant="h4"
-								align="center"
 								gutterBottom={true}>
 								I’m a <Box className={classes.boldText}>student</Box> in University of <Box className={classes.boldText}>Brawijaya </Box>and i’m a <Box className={classes.boldText}>Fullstack web developer </Box>enthusiast
 							</Typography>
 							<Typography
 								variant="h4"
-								align="center"
 								gutterBottom={true}>
 								Welcome to my <Box className={classes.boldText}>website</Box>
 							</Typography>

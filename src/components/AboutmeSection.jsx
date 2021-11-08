@@ -6,8 +6,8 @@ import { CurveDivider } from "./CurveDivider";
 
 const useStyles = makeStyles((theme) => ({
 	boldText:{
-		fontWeight:'900',
-		color: theme.palette.background.main,
+		fontWeight:'700',
+		color: theme.palette.secondary.main,
 		display:'inline'
 	},
 	logo:{
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export const Aboutmesection = () =>{
+export const AboutmeSection = () =>{
 	const classes = useStyles();
 	return(
 		<Box
@@ -71,10 +71,14 @@ export const Aboutmesection = () =>{
 						<Box>
 							<Typography
 								variant="h4"
+								fontWeight={500}
+								sx={{
+									color: "background.main"
+								}}
 								gutterBottom={true}>
-									I’m a student that major in Information Technnology. 
-									I really like backend and cloud computing but my frontend has more expirience. 
-									I really like programming and i’ve been learning software engineer. 
+									I’m a student that major in <Box className={classes.boldText}>Information Technnology.</Box> 
+									I really like <Box className={classes.boldText}>backend</Box> and <Box className={classes.boldText}>cloud computing </Box>but my <Box className={classes.boldText}>frontend </Box>has <Box className={classes.boldText}>more expirience</Box>.
+									I really like programming and i’ve been learning <Box className={classes.boldText}>software engineer</Box>. 
 									I can do a little bit of web design and project management but have little experience.
 							</Typography>
 						</Box>
