@@ -3,8 +3,9 @@ import { responsiveFontSizes } from '@mui/material/styles';
 import { green, teal } from '@mui/material/colors';
 import { HomeSection } from './components/HomeSection';
 import { Navbar } from './components/Navbar';
-import { Aboutmesection } from './components/AboutmeSection';
+import { AboutmeSection } from './components/AboutmeSection';
 import { CurveDivider } from './components/CurveDivider';
+import { SkillSection } from './components/SkillSection';
 
 const theme = createTheme({
   typography: {
@@ -34,7 +35,8 @@ function App() {
       <Navbar />
       <HomeSection />
       <CurveDivider />
-      <Aboutmesection />
+      <AboutmeSection />
+      <SkillSection />
     </ThemeProvider>
   );
 }

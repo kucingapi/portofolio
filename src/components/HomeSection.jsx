@@ -12,9 +12,18 @@ const useStyles = makeStyles((theme) => ({
 	},
 	logo:{
 		width:'30vw',
+		position:'relative',
+		animation:'30s $levitate infinite',
 		[theme.breakpoints.down('sm')]:{
 			width:'70vw'
 		}
+	},
+	'@keyframes levitate': {
+		from: {opacity: 1, transform:'translate(0%,0%)'},
+		"25%": {opacity:0.5, transform:'translate(10%,10%)'},
+		"50%": {opacity:0.7, transform:'translate(10%,-20%)'},
+		"75%": {opacity:0.9, transform:'translate(-20%,-20%)'},
+		to: {opacity: 1, transform:'translate(0%,0%)'}
 	},
 	itemMiddle:{
 		display:'flex',
@@ -36,14 +45,16 @@ const useStyles = makeStyles((theme) => ({
 			order:'1'
 		},
 	},
-	'@keyframes upDown': {
-		from: {opacity: 0},
-		"50%": {opacity:1},
-		to: {opacity: 0}
-	},
 	arrows:{
+		position:'relative',
 		animation: '3s $upDown infinite'
 	},
+	'@keyframes upDown': {
+		from: {opacity: 0.5, transform:'translateY(-25%)'},
+		"50%": {opacity:1, transform:'translateY(10%)'},
+		to: {opacity: 0.5, transform:'translateY(-25%)'}
+	},
+	
 
 }));
 

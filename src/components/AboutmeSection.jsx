@@ -1,8 +1,6 @@
-import { Box, Grid, Stack, Typography } from "@mui/material"
+import { Box, Grid, Typography } from "@mui/material"
 import { makeStyles } from "@mui/styles";
-import Logo from "../assets/My_Picture.png";
-import {ReactComponent as Arrows} from "../assets/arrows.svg";
-import { CurveDivider } from "./CurveDivider";
+import MyPicture from "../assets/My_Picture.png";
 
 const useStyles = makeStyles((theme) => ({
 	boldText:{
@@ -10,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
 		color: theme.palette.secondary.main,
 		display:'inline'
 	},
-	logo:{
+	mypicture:{
 		width:'30vw',
 		[theme.breakpoints.down('sm')]:{
 			width:'70vw'
@@ -84,7 +82,7 @@ export const AboutmeSection = () =>{
 						</Box>
 					</Grid>
 					<Grid item xs={12} md={6} className={`${classes.itemMiddle} ${classes.itemImage}`}>
-						<img className={classes.logo} src={Logo}/>
+						<img className={classes.mypicture} src={MyPicture}/>
 					</Grid>
 				</Grid>
 			</Box>
