@@ -5,6 +5,7 @@ import {ReactComponent as ReactJs} from "../assets/React_js.svg";
 import {ReactComponent as Azure} from "../assets/azure.svg";
 import {ReactComponent as Nodejs} from "../assets/nodejs-icon.svg";
 import {ReactComponent as Mysql} from "../assets/mysql-icon.svg";
+import {ReactComponent as Java} from "../assets/java-icon.svg";
 
 function LinearProgressWithLabel(props) {
 	return (
@@ -88,7 +89,7 @@ export const SkillSection = () =>{
 							<ReactJs className={classes.logo}/>
 						}
 						title="React Js"
-						description="Basic React js, Routing, Bootstrap, Material ui, Redux & Clean architecture"
+						description="Basic React js, Routing, Bootstrap, Material ui, Redux and Clean architecture"
 						value={90}
 					/>
 					<SkillCard 
@@ -132,6 +133,20 @@ export const SkillSection = () =>{
 						title="Database"
 						description="CRUD table, User defined function, and Trigger"
 						value={80}
+					/>
+					<SkillCard 
+						firstLogo={
+							<Code
+							color="background"
+							sx={{backgroundColor:"primary.main",borderRadius:2,p:0.5}}
+							/>
+						}
+						secondLogo={
+							<Java className={classes.logo}/>
+						}
+						title="Java"
+						description="Basic programming and Object Oriented Programming"
+						value={85}
 					/>
 				</Grid>
 			</Box>
