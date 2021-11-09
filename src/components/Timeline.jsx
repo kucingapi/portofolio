@@ -1,5 +1,5 @@
 import { AddModerator, Cake, Code, PeopleAlt } from '@mui/icons-material';
-import { Box, Typography, Link, Button } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
@@ -12,6 +12,15 @@ const useStyles = makeStyles((theme) => ({
 		display:'inline',
 		fontFamily:'Poppins',
 		color:'black'
+	},
+	arrows:{
+		position:'absolute',
+		animation: '3s $upDown infinite'
+	},
+	'@keyframes upDown': {
+		from: {opacity: 0.5, transform:'translateY(-25%)'},
+		"50%": {opacity:1, transform:'translateY(10%)'},
+		to: {opacity: 0.5, transform:'translateY(-25%)'}
 	},
 
 }));
@@ -61,8 +70,8 @@ export const Timeline = () => {
 				backgroundColor:'background.light'
 			}}
 		>
-			<Arrows style={{position:'absolute',right:0}}/>
-			<Arrows style={{position:'absolute'}}/>
+			<Arrows className={classes.arrows} style={{right:0}}/>
+			<Arrows className={classes.arrows} style={{position:'absolute'}}/>
 			<VerticalTimeline >
 				<TimelineElement 
 					title="Sweetreats"
