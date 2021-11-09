@@ -3,6 +3,8 @@ import { Box } from "@mui/system"
 import Carousel from "react-material-ui-carousel"
 import naga_peduli from "../assets/naga_peduli.png";
 import random_quote from "../assets/random_quote.png";
+import {ReactComponent as TriangleBottom} from "../assets/trianglebottom.svg";
+import {ReactComponent as TriangleTop} from "../assets/trianglebottom.svg";
 import udana_slice from "../assets/udana-slice.png";
 
 export const PortofolioSection = () => {
@@ -56,19 +58,33 @@ export const PortofolioSection = () => {
 			}}
 			p={5}
 		>
-					<Typography
-						variant="h2"
-						color="background.main"
-						textAlign="center"
-						fontWeight={500}
-						gutterBottom={true}
-					>
-						My Portofolio
-					</Typography>
-
+			<TriangleTop
+				style={{
+					position:'absolute',
+					right:0,
+					transform: 'translateY(-50%) rotate(-180deg)',
+					width:'15rem',
+					zIndex:0
+				}}
+			/>
+			<Typography
+				variant="h2"
+				color="primary"
+				textAlign="center"
+				fontWeight={700}
+				gutterBottom={true}
+				sx={{
+					zIndex:2
+				}}
+			>
+				My Portofolio
+			</Typography>
 			<Carousel
 				animation='slide'
+				autoPlay={true}
+				indicators={false}
 				cycleNavigation={false}
+				interval={4000}
 			>
 				<CarouselItem
 					title="Naga Peduli"
@@ -88,8 +104,15 @@ export const PortofolioSection = () => {
 					description="This is a slice of udana.id website, it use mui and reactjs"
 					link="https://kucingapi.github.io/udana-slice"
 				/>
-
 			</Carousel>
+			<TriangleBottom
+				style={{
+					position:'absolute',
+					left:0,
+					transform: 'translateY(-50%) ',
+					width:'15rem'
+				}}
+			/>
 		</Box>
 	)
 }
