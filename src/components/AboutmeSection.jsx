@@ -75,7 +75,7 @@ export const AboutmeSection = () =>{
 								}}
 								gutterBottom={true}>
 									I’m a student that major in <Box className={classes.boldText}>Information Technnology.</Box> 
-									I really like <Box className={classes.boldText}>backend</Box> and <Box className={classes.boldText}>cloud computing </Box>but my <Box className={classes.boldText}>frontend </Box>has <Box className={classes.boldText}>more expirience</Box>.
+									I really like <Box className={classes.boldText}>backend</Box> and <Box className={classes.boldText}>cloud computing </Box>but my <Box className={classes.boldText}>frontend </Box>has <Box className={classes.boldText}>more experience</Box>.
 									I really like programming and i’ve been learning <Box className={classes.boldText}>software engineer</Box>. 
 									I can do a little bit of web design and project management but have little experience.
 							</Typography>

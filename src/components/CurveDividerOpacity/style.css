@@ -1,0 +1,17 @@
+.curve-opacity {
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.curve-opacity svg {
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 98px;
+}
+
+.curve-opacity .shape-fill {
+  fill: #00e676;
+}

@@ -6,7 +6,8 @@ import { useState } from "react";
 const useStyles = makeStyles((theme) => ({
 	toolbar:{
 		display:"flex",
-		alignSelf:"center"
+		alignSelf:"center",
+		zIndex:'2'
 	},
 }));
 

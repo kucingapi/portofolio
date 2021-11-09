@@ -6,6 +6,7 @@ import { Navbar } from './components/Navbar';
 import { AboutmeSection } from './components/AboutmeSection';
 import { CurveDivider } from './components/CurveDivider';
 import { SkillSection } from './components/SkillSection';
+import { CurveDividerOpacity } from './components/CurveDividerOpacity';
 
 const theme = createTheme({
   typography: {
@@ -19,11 +20,9 @@ const theme = createTheme({
       main: teal['800'],
     },
     background: {
+      light: '#57FFE4',
       main: '#DFFFEC',
     },
-    // text: {
-    //   secondary: '#6EFFE8',
-    // },
   },
 });
 
@@ -37,6 +36,7 @@ function App() {
       <CurveDivider />
       <AboutmeSection />
       <SkillSection />
+      <CurveDividerOpacity />
     </ThemeProvider>
   );
 }

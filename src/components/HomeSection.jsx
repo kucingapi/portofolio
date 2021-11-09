@@ -34,13 +34,13 @@ const useStyles = makeStyles((theme) => ({
 	},
 	itemText:{
 		order:'1',
-		[theme.breakpoints.down('sm')]:{
+		[theme.breakpoints.down('md')]:{
 			order:'2'
 		},
 	},
 	itemImage:{
 		order:'2',
-		[theme.breakpoints.down('sm')]:{
+		[theme.breakpoints.down('md')]:{
 			order:'1'
 		},
 	},

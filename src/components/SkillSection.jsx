@@ -18,7 +18,7 @@ function LinearProgressWithLabel(props) {
 		</Box>
 	  </Box>
 	);
-  }
+}
 const useStyles = makeStyles((theme) => ({
 	boldText:{
 		fontWeight:'700',
@@ -40,13 +40,13 @@ export const SkillSection = () =>{
 			<Card sx={{backgroundColor:"background.main"}}>
 				<CardContent>
 					<Stack spacing={2}>
-						<Stack direction="row" spacing={2}>
 							{props.firstLogo}
+						<Stack direction="row" spacing={2}>
+							<Typography variant="h5" fontWeight="500" color="primary">
+								{props.title}
+							</Typography>
 							{props.secondLogo}
 						</Stack>
-						<Typography variant="h5" fontWeight="500" color="primary">
-							{props.title}
-						</Typography>
 						<Typography variant="body1" fontWeight="500" color="primary">
 							{props.description}
 						</Typography>
@@ -115,7 +115,7 @@ export const SkillSection = () =>{
 							<Nodejs className={classes.logo}/>
 						}
 						title="Express Js"
-						description="Basic Exress js, Routing, mongodb database & JWT autentication."
+						description="Basic Express js, Routing, mongodb database & JWT autentication."
 						value={60}
 					/>
 				</Grid>
