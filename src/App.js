@@ -9,6 +9,7 @@ import { SkillSection } from './components/SkillSection';
 import { CurveDividerOpacity } from './components/CurveDividerOpacity';
 import { TimelineSection } from './components/TimelineSection';
 import { PortofolioSection } from './components/PortofolioSection';
+import { ContactmeSection } from './components/ContactmeSection';
 
 const theme = createTheme({
   typography: {
@@ -41,6 +42,7 @@ function App() {
       <CurveDividerOpacity />
       <TimelineSection />
       <PortofolioSection />
+      <ContactmeSection />
     </ThemeProvider>
   );
 }
