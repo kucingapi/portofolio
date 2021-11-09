@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export const Timeline = () => {
+export const TimelineSection = () => {
 	const classes = useStyles();
 	const TimelineElement = (props) => (
 		<VerticalTimelineElement
