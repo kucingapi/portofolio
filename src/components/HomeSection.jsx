@@ -2,7 +2,6 @@ import { Box, Grid, Stack, Typography } from "@mui/material"
 import { makeStyles } from "@mui/styles";
 import Logo from "../assets/Logo.svg";
 import {ReactComponent as Arrows} from "../assets/arrows.svg";
-import { CurveDivider } from "./CurveDivider";
 
 const useStyles = makeStyles((theme) => ({
 	boldText:{
@@ -93,7 +92,7 @@ export const HomeSection = () =>{
 						</Box>
 					</Grid>
 					<Grid item xs={12} md={6} className={`${classes.itemMiddle} ${classes.itemImage}`}>
-						<img className={classes.logo} src={Logo}/>
+						<img className={classes.logo} src={Logo} alt="logo"/>
 					</Grid>
 				</Grid>
 			</Box>

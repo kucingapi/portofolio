@@ -82,7 +82,7 @@ export const AboutmeSection = () =>{
 						</Box>
 					</Grid>
 					<Grid item xs={12} md={6} className={`${classes.itemMiddle} ${classes.itemImage}`}>
-						<img className={classes.mypicture} src={MyPicture}/>
+						<img className={classes.mypicture} src={MyPicture} alt="my_photo"/>
 					</Grid>
 				</Grid>
 			</Box>
