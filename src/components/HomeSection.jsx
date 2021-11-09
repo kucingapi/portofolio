@@ -60,10 +60,13 @@ const useStyles = makeStyles((theme) => ({
 export const HomeSection = () =>{
 	const classes = useStyles();
 	return(
-		<Box>
+		<Box mt="64px">
 			<Box
 				sx={{
-					height:{md:"83vh",sm:"50vh"},
+					height:{
+						md:"83vh",
+						sm:"50vh"
+					},
 					backgroundColor:"background.main",
 					padding:2,
 				}}

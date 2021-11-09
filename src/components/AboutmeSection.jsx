@@ -54,7 +54,7 @@ export const AboutmeSection = () =>{
 					color:"text.secondary"
 				}}
 				>
-				Me Myself and I 
+				Me, Myself, and I 
 			</Typography>
 			<Box
 				sx={{

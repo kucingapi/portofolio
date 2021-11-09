@@ -4,6 +4,7 @@
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  z-index: 1;
 }
 
 .curve-opacity svg {

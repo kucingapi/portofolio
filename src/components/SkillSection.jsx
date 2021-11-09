@@ -1,9 +1,10 @@
-import { Cloud, Code } from "@mui/icons-material";
+import { Cloud, Code, Storage } from "@mui/icons-material";
 import { Stack, Box, Card, CardContent, Grid, Typography, LinearProgress } from "@mui/material"
 import { makeStyles } from "@mui/styles";
 import {ReactComponent as ReactJs} from "../assets/React_js.svg";
 import {ReactComponent as Azure} from "../assets/azure.svg";
 import {ReactComponent as Nodejs} from "../assets/nodejs-icon.svg";
+import {ReactComponent as Mysql} from "../assets/mysql-icon.svg";
 
 function LinearProgressWithLabel(props) {
 	return (
@@ -75,12 +76,12 @@ export const SkillSection = () =>{
 				Skills 
 			</Typography>
 			<Box mx={3}>
-				<Grid container spacing={1} >
+				<Grid container spacing={1} justifyContent="center" >
 					<SkillCard 
 						firstLogo={
 							<Code
-								color="background"
-								sx={{backgroundColor:"primary.main",borderRadius:2}}
+							color="background"
+							sx={{backgroundColor:"primary.main",borderRadius:2,p:0.5}}
 							/>
 						}
 						secondLogo={
@@ -93,30 +94,44 @@ export const SkillSection = () =>{
 					<SkillCard 
 						firstLogo={
 							<Cloud
-								color="primary"
-								
+								color="background"
+								sx={{backgroundColor:"primary.main",borderRadius:2,p:0.5}}
 							/>
 						}
 						secondLogo={
 							<Azure className={classes.logo}/>
 						}
 						title="Cloud"
-						description="Basic Docker & Basic Kubernetes. "
+						description="Basic Docker and Basic Kubernetes. "
 						value={20}
 					/>
 					<SkillCard 
 						firstLogo={
 							<Code
 								color="background"
-								sx={{backgroundColor:"primary.main",borderRadius:2}}
+								sx={{backgroundColor:"primary.main",borderRadius:2,p:0.5}}
 							/>
 						}
 						secondLogo={
 							<Nodejs className={classes.logo}/>
 						}
 						title="Express Js"
-						description="Basic Express js, Routing, mongodb database & JWT autentication."
+						description="Basic Express js, RESTFUL API, Routing, mongodb database, and JWT autentication."
 						value={60}
+					/>
+					<SkillCard 
+						firstLogo={
+							<Storage
+								color="background"
+								sx={{backgroundColor:"primary.main",borderRadius:2,p:0.5}}
+							/>
+						}
+						secondLogo={
+							<Mysql className={classes.logo}/>
+						}
+						title="Database"
+						description="CRUD table, User defined function, and Trigger"
+						value={80}
 					/>
 				</Grid>
 			</Box>

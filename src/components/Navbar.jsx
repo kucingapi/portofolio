@@ -20,7 +20,9 @@ export const Navbar = () =>{
 	};
 
 	return (
-		<AppBar position="static">
+		<AppBar 
+			position="fixed" 
+			sx={{zIndex:'2'}}>
 			<Toolbar className={classes.toolbar}>
 					<Tabs 
 						value={value} 
