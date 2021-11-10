@@ -10,6 +10,7 @@ import { CurveDividerOpacity } from './components/CurveDividerOpacity';
 import { TimelineSection } from './components/TimelineSection';
 import { PortofolioSection } from './components/PortofolioSection';
 import { ContactmeSection } from './components/ContactmeSection';
+import { Element, Events } from 'react-scroll/modules';
 
 const theme = createTheme({
   typography: {
@@ -28,21 +29,33 @@ const theme = createTheme({
     },
   },
 });
-
 const responsiveTheme = responsiveFontSizes(theme);
 
 function App() {
+  Events.scrollEvent.register('begin', function (to, element) {
+    console.log('begin', arguments);
+  });
   return (
     <ThemeProvider theme={responsiveTheme}>
       <Navbar />
-      <HomeSection />
+      <Element name="home">
+        <HomeSection />
+      </Element>
       <CurveDivider />
-      <AboutmeSection />
-      <SkillSection />
+      <Element name="aboutMe">
+        <AboutmeSection />
+      </Element>
+      <Element name="skill">
+        <SkillSection />
+      </Element>
       <CurveDividerOpacity />
-      <TimelineSection />
+      <Element name="timeline">
+        <TimelineSection />
+      </Element>
       <PortofolioSection />
-      <ContactmeSection />
+      <Element name="contact">
+        <ContactmeSection />
+      </Element>
     </ThemeProvider>
   );
 }

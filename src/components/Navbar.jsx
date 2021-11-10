@@ -2,21 +2,33 @@ import { Contacts, Home, Person, Settings, Work } from "@mui/icons-material"
 import { AppBar, Tab, Tabs, Toolbar } from "@mui/material"
 import { makeStyles } from "@mui/styles";
 import { useState } from "react";
+import { scroller } from "react-scroll/modules";
 
 const useStyles = makeStyles((theme) => ({
 	toolbar:{
 		display:"flex",
 		alignSelf:"center",
-		zIndex:'2'
 	},
 }));
+
+const scrollHandler = (index) => {
+	const listOfSection = ['home', 'aboutMe', 'skill', 'timeline', 'contact'];
+	scroller.scrollTo(listOfSection[index], {
+		duration: 1500,
+		delay: 100,
+		smooth: true,
+		
+		offset: -100
+	})
+}
 
 export const Navbar = () =>{
 	const classes = useStyles();
 	const [value, setValue] = useState(1);
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
-		console.log(value);
+		scrollHandler(newValue);
+		console.log(newValue);
 	};
 
 	return (

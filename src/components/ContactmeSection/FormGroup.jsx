@@ -1,21 +1,18 @@
-import { GitHub, LinkedIn, Mail, Phone } from "@mui/icons-material";
-import { Box, Button, Grid, IconButton, Stack, TextField, Typography } from "@mui/material"
-import BoredNovel from "../assets/bored_novel.png";
 import * as yup from 'yup';
-import { useFormik } from "formik";
 import emailjs from 'emailjs-com';
-import { useRef } from "react";
+import { Box, Button, Grid, TextField } from '@mui/material';
+import { useFormik } from 'formik';
 
 const sendEmail = (data) => {
 	const serviceID = process.env.REACT_APP_SERVICE_ID;
     const templateID = process.env.REACT_APP_TEMPLATE_ID;
     const userID = process.env.REACT_APP_USER_ID;
 	emailjs.send(serviceID, templateID, data, userID)
-		.then((result) => {
+		.then(() => {
 			alert('email successfully send');
 		})
-		.catch((err) => {
-			alert('email has an error try again later');
+		.catch(() => {
+			alert('there has been error try again later');
 		}) 	
 }
 const validationSchema = yup.object({
@@ -34,8 +31,7 @@ const validationSchema = yup.object({
 	  .required('description is required'),
 });
 
-const FormGroup = () => {
-	const form = useRef();
+export const FormGroup = () => {
 	const formik = useFormik({
 		initialValues: {
 			name:'',
@@ -59,7 +55,6 @@ const FormGroup = () => {
 			noValidate
 			autoComplete="off"
 			onSubmit={formik.handleSubmit}
-			ref={form}
 		>
 			<Grid spacing={2} container>
 				<Grid item xs={12} md={6}>
@@ -131,83 +126,6 @@ const FormGroup = () => {
 					</Button>
 				</Grid>
 			</Grid>
-		</Box>
-	)
-}
-
-export const ContactmeSection = () =>{
-	console.log(process.env);
-	return(
-		<Box 
-			sx={{
-				background: 'rgba(0, 182, 134, 0.3)',
-				backdropFilter: 'blur(59px)',
-			}}
-			p={10}
-		>
-			<Grid container >
-				<Grid item xs={12} md={6}>
-					<Typography 
-						variant="h3" 
-						color="background.main"
-						fontWeight={700}
-					>
-						Contact Me
-					</Typography>
-					<Stack direction="row">
-						<IconButton 
-							color="background" 
-							size="large"
-							href="https://github.com/kucingapi"
-							target="_blank"
-						>
-							<GitHub fontSize="inherit"/>
-						</IconButton>
-						<IconButton 
-							color="background" 
-							size="large"
-							href="https://www.linkedin.com/in/novel-bafagih/"
-							target="_blank"
-						>
-							<LinkedIn fontSize="inherit"/>
-						</IconButton>
-						<IconButton 
-							color="background" 
-							size="large"
-							href="mailto:novelbafagih09@gmail.com"
-							target="_blank"
-						>
-							<Mail fontSize="inherit"/>
-						</IconButton>
-						<IconButton 
-							color="background" 
-							size="large"
-							href="tel:+62895328079912"
-							target="_blank"
-						>
-							<Phone fontSize="inherit"/>
-						</IconButton>
-					</Stack>
-					<Typography 
-						variant="h4" 
-						color="background.main"
-						fontWeight={500}
-					>
-						Feel free to contact me, because i have too much free time. see you in my email :)
-					</Typography>
-					<FormGroup/>
-				</Grid>			  
-				<Grid item xs={12} md={6}>
-					<img 
-						src={BoredNovel} 
-						alt="bored person"
-						style={{
-							maxWidth:'80vw'
-						}}
-					/>
-				</Grid>
-			</Grid>
-
 		</Box>
 	)
 }

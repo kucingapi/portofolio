@@ -13,17 +13,17 @@ const useStyles = makeStyles((theme) => ({
 		position:'absolute',
 		left:0,
 		transform: 'translateY(-50%) ',
-		animation:'10s $levitateBottom infinite',
+		animation:'30s $levitateBottom infinite',
 		width:'15rem'
 	},
 	'@keyframes levitateBottom': {
 		from: {opacity: 1, transform:'translate(0%,-50%)'},
-		"50%": {opacity:0.7, transform:'translate(10%,-70%)'},
+		"50%": {opacity:0.7, transform:'translate(0%,-70%)'},
 		to: {opacity: 1, transform:'translate(0%,-50%)'}
 	},
 	'@keyframes levitateTop': {
 		from: {opacity: 1, transform:'translate(0%,-50%) rotate(-180deg)'},
-		"50%": {opacity:0.7, transform:'translate(10%,-30%) rotate(-180deg)'},
+		"50%": {opacity:0.7, transform:'translate(0%,-30%) rotate(-180deg)'},
 		to: {opacity: 1, transform:'translate(0%,-50%) rotate(-180deg)'}
 	},
 	triangleTop:{
