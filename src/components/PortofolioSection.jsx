@@ -1,4 +1,5 @@
 import { Card, CardContent, Typography, CardMedia, Button } from "@mui/material"
+import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system"
 import Carousel from "react-material-ui-carousel"
 import naga_peduli from "../assets/naga_peduli.png";
@@ -7,7 +8,36 @@ import {ReactComponent as TriangleBottom} from "../assets/trianglebottom.svg";
 import {ReactComponent as TriangleTop} from "../assets/trianglebottom.svg";
 import udana_slice from "../assets/udana-slice.png";
 
+const useStyles = makeStyles((theme) => ({
+	triangleBottom:{
+		position:'absolute',
+		left:0,
+		transform: 'translateY(-50%) ',
+		animation:'10s $levitateBottom infinite',
+		width:'15rem'
+	},
+	'@keyframes levitateBottom': {
+		from: {opacity: 1, transform:'translate(0%,-50%)'},
+		"50%": {opacity:0.7, transform:'translate(10%,-70%)'},
+		to: {opacity: 1, transform:'translate(0%,-50%)'}
+	},
+	'@keyframes levitateTop': {
+		from: {opacity: 1, transform:'translate(0%,-50%) rotate(-180deg)'},
+		"50%": {opacity:0.7, transform:'translate(10%,-30%) rotate(-180deg)'},
+		to: {opacity: 1, transform:'translate(0%,-50%) rotate(-180deg)'}
+	},
+	triangleTop:{
+		position:'absolute',
+		right:0,
+		transform: 'translateY(-50%) rotate(-180deg)',
+		animation:'10s $levitateTop infinite',
+		width:'15rem',
+		zIndex:0
+	},
+}))
+
 export const PortofolioSection = () => {
+	const classes = useStyles();
 	const CarouselItem = (props) =>(
 		<Card sx={{backgroundColor:'primary.main'}}>
 			<CardMedia
@@ -51,6 +81,7 @@ export const PortofolioSection = () => {
 			</CardContent>
 		</Card>
 	)
+
 	return(
 		<Box
 			sx={{
@@ -59,17 +90,11 @@ export const PortofolioSection = () => {
 			p={5}
 		>
 			<TriangleTop
-				style={{
-					position:'absolute',
-					right:0,
-					transform: 'translateY(-50%) rotate(-180deg)',
-					width:'15rem',
-					zIndex:0
-				}}
+				className={classes.triangleTop}
 			/>
 			<Typography
 				variant="h2"
-				color="primary"
+				color="primary.light"
 				textAlign="center"
 				fontWeight={700}
 				gutterBottom={true}
@@ -106,12 +131,7 @@ export const PortofolioSection = () => {
 				/>
 			</Carousel>
 			<TriangleBottom
-				style={{
-					position:'absolute',
-					left:0,
-					transform: 'translateY(-50%) ',
-					width:'15rem'
-				}}
+				className={classes.triangleBottom}
 			/>
 		</Box>
 	)

@@ -3,8 +3,21 @@ import { Box, Button, Grid, IconButton, Stack, TextField, Typography } from "@mu
 import BoredNovel from "../assets/bored_novel.png";
 import * as yup from 'yup';
 import { useFormik } from "formik";
+import emailjs from 'emailjs-com';
+import { useRef } from "react";
 
-
+const sendEmail = (data) => {
+	const serviceID = process.env.REACT_APP_SERVICE_ID;
+    const templateID = process.env.REACT_APP_TEMPLATE_ID;
+    const userID = process.env.REACT_APP_USER_ID;
+	emailjs.send(serviceID, templateID, data, userID)
+		.then((result) => {
+			alert('email successfully send');
+		})
+		.catch((err) => {
+			alert('email has an error try again later');
+		}) 	
+}
 const validationSchema = yup.object({
 	name: yup
 	  .string('Enter your name')
@@ -22,6 +35,7 @@ const validationSchema = yup.object({
 });
 
 const FormGroup = () => {
+	const form = useRef();
 	const formik = useFormik({
 		initialValues: {
 			name:'',
@@ -30,8 +44,9 @@ const FormGroup = () => {
 			description:'',
 		},
 		validationSchema: validationSchema,
-		onSubmit: (values) => {
-			alert(JSON.stringify({id:process.env}, null, 2));
+		onSubmit: (values, {resetForm}) => {
+			sendEmail(values);
+			resetForm();
 		},
 	  });
 	return(
@@ -44,6 +59,7 @@ const FormGroup = () => {
 			noValidate
 			autoComplete="off"
 			onSubmit={formik.handleSubmit}
+			ref={form}
 		>
 			<Grid spacing={2} container>
 				<Grid item xs={12} md={6}>
