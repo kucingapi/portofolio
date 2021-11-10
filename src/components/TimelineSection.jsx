@@ -93,7 +93,7 @@ export const TimelineSection = () => {
 					location="University Brawijaya (Work From Home)"
 					description=" I'm a computational intelligence department in bcc with the sub department of competitive programming. I'm also deputy heade of the talent development division."
 					icon={<Code/>}
-					date="8 Aug 2021 - 22 Aug 2021"
+					date="Mar 2021 - Present"
 				/>
 				<TimelineElement 
 					title="KBMTI"
