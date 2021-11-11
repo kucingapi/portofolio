@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
 		right:0,
 		filter: 'blur(58px)',
 		zIndex:-2,
+		animation:'10s $levitateTop infinite',
 		// top: 0,
 		transform: 'translateY(50%) ',
 		overflowY:'hidden'
@@ -20,15 +21,6 @@ const useStyles = makeStyles((theme) => ({
 		from: {opacity: 1, transform:'translate(0%,-50%) rotate(-180deg)'},
 		"50%": {opacity:0.7, transform:'translate(0%,-30%) rotate(-180deg)'},
 		to: {opacity: 1, transform:'translate(0%,-50%) rotate(-180deg)'}
-	},
-	circleTop:{
-		position:'absolute',
-		filter: 'blur(58px)',
-		// bottom: 0,
-		transform: 'translateY(-50%)',
-		animation:'10s $levitateTop infinite',
-		zIndex:-2,
-		overflowY:'hidden'
 	},
 }))
 
@@ -42,9 +34,6 @@ export const ContactmeSection = () =>{
 			}}
 			p={10}
 		>
-			<CircleTop 
-				className={classes.circleTop}
-			/>
 			<CircleBottom 
 				className={classes.circleBottom}
 			/>
