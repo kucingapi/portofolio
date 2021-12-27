@@ -1,5 +1,5 @@
-import { Cloud, Code, Storage } from "@mui/icons-material";
-import { Stack, Box, Card, CardContent, Grid, Typography, LinearProgress, Collapse } from "@mui/material"
+import { Cloud, Code, Storage, ExpandMore, ExpandLess } from "@mui/icons-material";
+import { Stack, Box, Card, CardContent, Grid, Typography, LinearProgress, Collapse, IconButton } from "@mui/material"
 import { makeStyles } from "@mui/styles";
 import {ReactComponent as ReactJs} from "../assets/React_js.svg";
 import {ReactComponent as Azure} from "../assets/azure.svg";
@@ -56,26 +56,43 @@ export const SkillSection = () =>{
 			<Grid item xs={12} md={4}>
 				<Card sx={{
 					backgroundColor:"background.main",
-					cursor:"pointer"	
 				}}
-					onClick={handleChange}
+					
 				>
 					<CardContent>
-							<Stack spacing={2}>
-									{props.firstLogo}
-								<Stack direction="row" spacing={2}>
-									<Typography variant="h5" fontWeight="500" color="primary">
-										{props.title}
-									</Typography>
-									{props.secondLogo}
-								</Stack>
-								<Collapse in={show}>
-									<Typography variant="body1" fontWeight="500" color="primary">
-										{props.description}
-									</Typography>
-									<LinearProgressWithLabel value={progress}/>
-								</Collapse>
+						<Stack spacing={2}>
+							<Stack 
+								direction="row" 
+								justifyContent="space-between"
+								alignItems="center"
+							>
+								{props.firstLogo}
+								<IconButton aria-label="more" size="small" color="primary" onClick={handleChange}>
+									{
+										show?
+										<ExpandLess
+											sx={{width:"1.5em",height:"1.5em"}}
+										/>
+										:
+										<ExpandMore
+											sx={{width:"1.5em",height:"1.5em"}}
+										/>
+									}
+								</IconButton>
 							</Stack>
+							<Stack direction="row" spacing={2}>
+								<Typography variant="h5" fontWeight="500" color="primary">
+									{props.title}
+								</Typography>
+								{props.secondLogo}
+							</Stack>
+							<Collapse in={show}>
+								<Typography variant="body1" fontWeight="500" color="primary">
+									{props.description}
+								</Typography>
+								<LinearProgressWithLabel value={progress}/>
+							</Collapse>
+						</Stack>
 					</CardContent>
 				</Card>
 			</Grid>
@@ -104,8 +121,8 @@ export const SkillSection = () =>{
 					<SkillCard 
 						firstLogo={
 							<Code
-							color="background"
-							sx={{backgroundColor:"primary.main",borderRadius:2,p:0.5}}
+								color="background"
+								sx={{backgroundColor:"primary.main",borderRadius:2,p:0.5}}
 							/>
 						}
 						secondLogo={
@@ -160,8 +177,8 @@ export const SkillSection = () =>{
 					<SkillCard 
 						firstLogo={
 							<Code
-							color="background"
-							sx={{backgroundColor:"primary.main",borderRadius:2,p:0.5}}
+								color="background"
+								sx={{backgroundColor:"primary.main",borderRadius:2,p:0.5}}
 							/>
 						}
 						secondLogo={
