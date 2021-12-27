@@ -14,7 +14,7 @@
     "dotenv": "^10.0.0",
     "emailjs-com": "^3.2.0",
     "formik": "^2.2.9",
-    "framer-motion": "^5.5.5",
+    "framer-motion": "^4.1.17",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-material-ui-carousel": "^3.0.4",

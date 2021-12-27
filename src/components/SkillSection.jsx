@@ -1,11 +1,13 @@
 import { Cloud, Code, Storage } from "@mui/icons-material";
-import { Stack, Box, Card, CardContent, Grid, Typography, LinearProgress } from "@mui/material"
+import { Stack, Box, Card, CardContent, Grid, Typography, LinearProgress, Collapse } from "@mui/material"
 import { makeStyles } from "@mui/styles";
 import {ReactComponent as ReactJs} from "../assets/React_js.svg";
 import {ReactComponent as Azure} from "../assets/azure.svg";
 import {ReactComponent as Nodejs} from "../assets/nodejs-icon.svg";
 import {ReactComponent as Mysql} from "../assets/mysql-icon.svg";
 import {ReactComponent as Java} from "../assets/java-icon.svg";
+import { motion } from "framer-motion"
+import { useEffect, useState } from "react";
 
 function LinearProgressWithLabel(props) {
 	return (
@@ -37,27 +39,48 @@ const useStyles = makeStyles((theme) => ({
 export const SkillSection = () =>{
 	const classes = useStyles();
 
-	const SkillCard = (props) => (
-		<Grid item xs={12} md={4}>
-			<Card sx={{backgroundColor:"background.main"}}>
-				<CardContent>
-					<Stack spacing={2}>
-							{props.firstLogo}
-						<Stack direction="row" spacing={2}>
-							<Typography variant="h5" fontWeight="500" color="primary">
-								{props.title}
-							</Typography>
-							{props.secondLogo}
-						</Stack>
-						<Typography variant="body1" fontWeight="500" color="primary">
-							{props.description}
-						</Typography>
-						<LinearProgressWithLabel value={props.value}/>
-					</Stack>
-				</CardContent>
-			</Card>
-		</Grid>
-	)
+	const SkillCard = (props) => 
+	{
+		const [show, setShow] = useState(false)
+		const [progress, setProgress] = useState(0)
+		const handleChange = () => setShow(!show);
+		useEffect(() => {
+			if(show){
+				setProgress(props.value)
+			}
+			else{
+				setProgress(0);
+			}
+		}, [show])
+		return (
+			<Grid item xs={12} md={4}>
+				<Card sx={{
+					backgroundColor:"background.main",
+					cursor:"pointer"	
+				}}
+					onClick={handleChange}
+				>
+					<CardContent>
+							<Stack spacing={2}>
+									{props.firstLogo}
+								<Stack direction="row" spacing={2}>
+									<Typography variant="h5" fontWeight="500" color="primary">
+										{props.title}
+									</Typography>
+									{props.secondLogo}
+								</Stack>
+								<Collapse in={show}>
+									<Typography variant="body1" fontWeight="500" color="primary">
+										{props.description}
+									</Typography>
+									<LinearProgressWithLabel value={progress}/>
+								</Collapse>
+							</Stack>
+					</CardContent>
+				</Card>
+			</Grid>
+		)
+	}
 
 	return(
 		<Box
