@@ -24,7 +24,7 @@ const scrollHandler = (index) => {
 
 export const Navbar = () =>{
 	const classes = useStyles();
-	const [value, setValue] = useState(1);
+	const [value, setValue] = useState(0);
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
 		scrollHandler(newValue);
