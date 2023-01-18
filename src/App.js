@@ -8,7 +8,6 @@ import { CurveDivider } from './components/CurveDivider';
 import { SkillSection } from './components/SkillSection';
 import { CurveDividerOpacity } from './components/CurveDividerOpacity';
 import { TimelineSection } from './components/TimelineSection';
-import { PortofolioSection } from './components/PortofolioSection';
 import { ContactmeSection } from './components/ContactmeSection';
 import { Element, Events } from 'react-scroll/modules';
 
@@ -36,7 +35,7 @@ function App() {
     console.log('begin', arguments);
   });
   return (
-    <ThemeProvider theme={responsiveTheme}>
+    <ThemeProvider theme={responsiveTheme}> 
       <Navbar />
       <Element name="home">
         <HomeSection />
@@ -52,7 +51,6 @@ function App() {
       <Element name="timeline">
         <TimelineSection />
       </Element>
-      <PortofolioSection />
       <Element name="contact">
         <ContactmeSection />
       </Element>

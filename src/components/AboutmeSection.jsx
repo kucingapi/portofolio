@@ -1,6 +1,8 @@
 import { Box, Grid, Typography } from "@mui/material"
 import { makeStyles } from "@mui/styles";
 import MyPicture from "../assets/My_Picture.png";
+import { useEffect } from 'react';
+
 
 const useStyles = makeStyles((theme) => ({
 	boldText:{
@@ -39,6 +41,12 @@ const useStyles = makeStyles((theme) => ({
 
 export const AboutmeSection = () =>{
 	const classes = useStyles();
+	useEffect(() => {
+		console.log('open');
+		return () => {
+			console.log("close");
+		}
+	}, [])
 	return(
 		<Box
 			sx={{
