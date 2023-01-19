@@ -1,4 +1,8 @@
-import { AddModerator, Cake, Code, PeopleAlt } from '@mui/icons-material';
+import {
+  AddModerator,
+  Code,
+  Groups,
+} from '@mui/icons-material';
 import { Box, Typography, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import {
@@ -72,11 +76,30 @@ export const TimelineSection = () => {
       <Arrows className={classes.arrows} style={{ position: 'absolute' }} />
       <VerticalTimeline>
         <TimelineElement
-          title="Sweetreats"
-          location="University Brawijaya (Work From Home)"
-          description="Sweetreats is a recipe sharing web app, it is a final project for one of subject in uni, i became the backend of the team with lumen php as a framework."
-          icon={<Cake />}
-          date="On Progress"
+          title="Feel It"
+          location="University Brawijaya"
+          description=" Feel It is an orientation for new students at the University of Brawijaya Information Technology. What I've done: Lead a supporting team consisting of 8 divisions with 60 people, Creating an Offline event for the first time in 2 year"
+          icon={<Groups />}
+          date="Apr 2022 - Nov 2022"
+        />
+        <TimelineElement
+          title="IFEST"
+          location="Unpad - Online"
+          description="This project is form a competition that held by Unpad. Rentall is a mobile app that focus on renting car and
+					motorcycle. I've won and got 3rd place in this competition. This mobile app use kotlin jetpack compose, and use
+					firebase as backend."
+          icon={<Groups />}
+          date="Aug 2022 - Nov 2022"
+          link="https://github.com/novelbafagih/RentAll"
+        />
+        <TimelineElement
+          title="Udana.id"
+          location="Jakarta"
+          description="Udana.id is a start-up that aims for Indonesian SME & Startup company growth to the next level. It is a
+					crowdfunding platform for small businesses. I was a part of the front-end developer team."
+          icon={<Groups />}
+          date="Apr 2022 - Nov 2022"
+          link="https://udana.id/"
         />
         <TimelineElement
           title="Naga Peduli"
